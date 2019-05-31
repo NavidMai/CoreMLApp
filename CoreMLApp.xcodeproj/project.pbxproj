@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D5BAAF922A0DBD700707278 /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5BAAF822A0DBD600707278 /* ImageUtils.swift */; };
 		6DB09576229FA00500475FC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB09575229FA00500475FC1 /* AppDelegate.swift */; };
-		6DB09578229FA00500475FC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB09577229FA00500475FC1 /* ViewController.swift */; };
+		6DB09578229FA00500475FC1 /* ImageRecognition_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB09577229FA00500475FC1 /* ImageRecognition_VC.swift */; };
 		6DB0957B229FA00500475FC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB09579229FA00500475FC1 /* Main.storyboard */; };
 		6DB0957D229FA00700475FC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB0957C229FA00700475FC1 /* Assets.xcassets */; };
 		6DB09580229FA00700475FC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB0957E229FA00700475FC1 /* LaunchScreen.storyboard */; };
 		6DB09588229FA43D00475FC1 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6DB09587229FA43D00475FC1 /* Inceptionv3.mlmodel */; };
+		6DB09592229FC8E700475FC1 /* TextRecognition_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB09591229FC8E700475FC1 /* TextRecognition_VC.swift */; };
+		6DB09594229FCA3900475FC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB09593229FCA3900475FC1 /* ViewController.swift */; };
+		6DB09596229FD3E300475FC1 /* Alphanum_28x28.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6DB09595229FD3E300475FC1 /* Alphanum_28x28.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D5BAAF822A0DBD600707278 /* ImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		6DB09572229FA00500475FC1 /* CoreMLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreMLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB09575229FA00500475FC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6DB09577229FA00500475FC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6DB09577229FA00500475FC1 /* ImageRecognition_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognition_VC.swift; sourceTree = "<group>"; };
 		6DB0957A229FA00500475FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DB0957C229FA00700475FC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DB0957F229FA00700475FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DB09581229FA00700475FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DB09587229FA43D00475FC1 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		6DB09591229FC8E700475FC1 /* TextRecognition_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognition_VC.swift; sourceTree = "<group>"; };
+		6DB09593229FCA3900475FC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6DB09595229FD3E300475FC1 /* Alphanum_28x28.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Alphanum_28x28.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				6DB09587229FA43D00475FC1 /* Inceptionv3.mlmodel */,
+				6DB09595229FD3E300475FC1 /* Alphanum_28x28.mlmodel */,
 				6DB09574229FA00500475FC1 /* CoreMLApp */,
 				6DB09573229FA00500475FC1 /* Products */,
 			);
@@ -57,9 +66,12 @@
 		6DB09574229FA00500475FC1 /* CoreMLApp */ = {
 			isa = PBXGroup;
 			children = (
+				6D5BAAF822A0DBD600707278 /* ImageUtils.swift */,
+				6DB09591229FC8E700475FC1 /* TextRecognition_VC.swift */,
 				6DB09575229FA00500475FC1 /* AppDelegate.swift */,
-				6DB09577229FA00500475FC1 /* ViewController.swift */,
+				6DB09577229FA00500475FC1 /* ImageRecognition_VC.swift */,
 				6DB09579229FA00500475FC1 /* Main.storyboard */,
+				6DB09593229FCA3900475FC1 /* ViewController.swift */,
 				6DB0957C229FA00700475FC1 /* Assets.xcassets */,
 				6DB0957E229FA00700475FC1 /* LaunchScreen.storyboard */,
 				6DB09581229FA00700475FC1 /* Info.plist */,
@@ -138,9 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DB09578229FA00500475FC1 /* ViewController.swift in Sources */,
+				6DB09594229FCA3900475FC1 /* ViewController.swift in Sources */,
+				6DB09578229FA00500475FC1 /* ImageRecognition_VC.swift in Sources */,
+				6DB09592229FC8E700475FC1 /* TextRecognition_VC.swift in Sources */,
+				6DB09596229FD3E300475FC1 /* Alphanum_28x28.mlmodel in Sources */,
 				6DB09588229FA43D00475FC1 /* Inceptionv3.mlmodel in Sources */,
 				6DB09576229FA00500475FC1 /* AppDelegate.swift in Sources */,
+				6D5BAAF922A0DBD700707278 /* ImageUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
