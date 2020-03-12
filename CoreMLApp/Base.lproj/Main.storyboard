@@ -76,7 +76,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="DtR-WL-ECF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1088.8" y="787.6847290640394"/>
+            <point key="canvasLocation" x="871" y="43"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="V3f-do-e2b">
@@ -93,7 +93,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qEp-pa-4mH">
-                                <rect key="frame" x="106.66666666666669" y="200" width="162" height="72"/>
+                                <rect key="frame" x="106.66666666666669" y="200" width="162" height="108"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9b1-OO-qTD">
                                         <rect key="frame" x="0.0" y="0.0" width="162" height="36"/>
@@ -111,6 +111,14 @@
                                             <action selector="GoToTextRecognition:" destination="wOQ-lm-gPE" eventType="touchUpInside" id="2ct-nW-Aci"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDf-ZW-cvu">
+                                        <rect key="frame" x="0.0" y="72" width="162" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Age Detect"/>
+                                        <connections>
+                                            <action selector="GoToAgeDetect:" destination="wOQ-lm-gPE" eventType="touchUpInside" id="h5r-Ep-Gc1"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -126,11 +134,76 @@
                     <connections>
                         <segue destination="MK3-VX-uag" kind="show" identifier="segue_image_recognition" id="lEs-pS-8Aw"/>
                         <segue destination="Q69-QA-IrU" kind="show" identifier="segue_text_recognition" id="1z7-kr-AhD"/>
+                        <segue destination="1fK-6G-V8R" kind="show" identifier="segue_age_detect" id="Ox2-UT-HuC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fI-bk-PQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-857" y="788"/>
+        </scene>
+        <!--Age Detect-->
+        <scene sceneID="leI-XK-o31">
+            <objects>
+                <viewController id="fJq-Ic-ynW" customClass="AgeDetect_VC" customModule="CoreMLApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bye-Ru-bDD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9g-Iw-B00">
+                                <rect key="frame" x="165.66666666666666" y="761" width="44" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="iCY-7f-pxe" kind="unwind" unwindAction="unwindFor:" id="evT-q1-51W"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="21L-t7-0AH">
+                                <rect key="frame" x="38" y="135" width="299" height="299"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="4Xs-Es-15P"/>
+                                    <constraint firstAttribute="height" constant="299" id="Et7-ga-9JV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose an image to analysis..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfm-q4-JAd">
+                                <rect key="frame" x="71.666666666666671" y="522.66666666666663" width="231.66666666666663" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gfm-q4-JAd" firstAttribute="centerX" secondItem="JJy-sS-IZD" secondAttribute="centerX" id="0hN-44-haa"/>
+                            <constraint firstItem="21L-t7-0AH" firstAttribute="top" secondItem="JJy-sS-IZD" secondAttribute="top" constant="47" id="1Rg-bL-k1v"/>
+                            <constraint firstItem="K9g-Iw-B00" firstAttribute="bottom" secondItem="JJy-sS-IZD" secondAttribute="bottom" constant="19" id="6ne-aY-eI6"/>
+                            <constraint firstItem="K9g-Iw-B00" firstAttribute="centerX" secondItem="JJy-sS-IZD" secondAttribute="centerX" id="EaD-xx-cnv"/>
+                            <constraint firstItem="JJy-sS-IZD" firstAttribute="bottom" secondItem="Gfm-q4-JAd" secondAttribute="bottom" constant="235" id="PU0-2A-lbm"/>
+                            <constraint firstItem="21L-t7-0AH" firstAttribute="centerX" secondItem="K9g-Iw-B00" secondAttribute="centerX" id="iqB-ah-8XH"/>
+                            <constraint firstItem="K9g-Iw-B00" firstAttribute="bottom" secondItem="JJy-sS-IZD" secondAttribute="bottom" constant="19" id="lti-gV-tQl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JJy-sS-IZD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Age Detect" id="Fes-dv-1Cc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="WUH-ve-nvm">
+                            <connections>
+                                <action selector="camera:" destination="fJq-Ic-ynW" id="2Pu-RF-ecd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Library" id="sFb-I9-Xz2">
+                            <connections>
+                                <action selector="openLibrary:" destination="fJq-Ic-ynW" id="j6f-hs-BSw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="21L-t7-0AH" id="A7D-yg-A04"/>
+                        <outlet property="predictionLabel" destination="Gfm-q4-JAd" id="nro-Vd-U0l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2TD-ps-nh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iCY-7f-pxe" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="871.20000000000005" y="1526.600985221675"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AbK-eR-fAb">
@@ -148,7 +221,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbz-hW-U58" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="788.42364532019712"/>
+            <point key="canvasLocation" x="-71" y="43"/>
         </scene>
         <!--Text Recognition-->
         <scene sceneID="i2H-ts-wlP">
@@ -215,7 +288,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvl-L0-TD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="VL2-lf-u2C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1079.2" y="1533.9901477832514"/>
+            <point key="canvasLocation" x="871" y="788"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UDE-VS-UZw">
@@ -233,7 +306,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxh-f8-4Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="1533.9901477832514"/>
+            <point key="canvasLocation" x="-71" y="788"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hs8-mC-jgv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1fK-6G-V8R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2e0-sL-34g">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fJq-Ic-ynW" kind="relationship" relationship="rootViewController" id="Gus-1T-xRq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYJ-Yb-u4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71.200000000000003" y="1526.600985221675"/>
         </scene>
     </scenes>
 </document>

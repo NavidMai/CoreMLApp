@@ -18,10 +18,6 @@ class TextRecognition_VC: UIViewController, UINavigationControllerDelegate {
     var textMetadata = [Int: [Int: String]]()
     
     // Core ML model
-//    var model: Alphanum_28x28!
-//    override func viewWillAppear(_ animated: Bool) {
-//        model = Alphanum_28x28()
-//    }
     var model: VNCoreMLModel!
     private func loadModel() {
         model = try? VNCoreMLModel(for: Alphanum_28x28().model)
@@ -37,7 +33,7 @@ class TextRecognition_VC: UIViewController, UINavigationControllerDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    
+    // Camera bar button action
     @IBAction func camera(_ sender: Any) {
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
             return
@@ -50,7 +46,7 @@ class TextRecognition_VC: UIViewController, UINavigationControllerDelegate {
         present(cameraPicker, animated: true)
     }
     
-    
+    // Library bar button action
     @IBAction func openLibrary(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self

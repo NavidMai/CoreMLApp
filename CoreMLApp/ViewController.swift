@@ -18,6 +18,10 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "segue_text_recognition", sender: self)
     }
     
+    @IBAction func GoToAgeDetect(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "segue_age_detect", sender: self)
+    }
+    
     @IBAction func unwind (for segue :UIStoryboardSegue){
         
     }
